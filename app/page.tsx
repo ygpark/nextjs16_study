@@ -13,6 +13,8 @@ export default function Home() {
           >
             - Next.js 공식 레퍼런스
           </a>
+        </li>
+        <li>
           <a
             href="https://nextjs-ko.org/"
             target="_blank"

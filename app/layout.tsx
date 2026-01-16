@@ -31,6 +31,7 @@ export default function RootLayout({
     { name: "Client Component", href: "/client-component" },
     { name: "+ip", href: "/api/ip" },
     { name: "+time", href: "/api/time" },
+    { name: "drizzle-orm", href: "/drizzle-orm" },
   ];
 
   return (
