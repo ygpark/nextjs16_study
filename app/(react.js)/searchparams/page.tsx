@@ -10,7 +10,6 @@ async function Page({ searchParams }: PageProps) {
 
   return (
     <div>
-      <h1>Props/searchParmas</h1>
       <p>searchParams = {JSON.stringify(search, null, 2)}</p>
     </div>
   );

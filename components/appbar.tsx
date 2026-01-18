@@ -1,22 +1,18 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
-
-// import { useIsMobile } from "@/hooks/use-mobile";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { ModeToggle } from "./mode-toggle";
+import React, { useRef } from "react";
 
 const Appbar = () => {
+  // details 요소에 접근하기 위한 ref
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  const handleClose = () => {
+    if (detailsRef.current) {
+      // open 속성을 수동으로 제거하여 메뉴를 닫음
+      detailsRef.current.removeAttribute("open");
+    }
+  };
+
   const navList: { title: string; href: string }[] = [
     { title: "Home", href: "/" },
     { title: "Client Component", href: "/client-component" },
@@ -36,56 +32,52 @@ const Appbar = () => {
     { title: "ip", href: "/api/ip" },
     { title: "time", href: "/api/time" },
   ];
+
   return (
-    <div className="border-b p-3">
-      <NavigationMenu viewport={false}>
-        <NavigationMenuList className="flex-wrap">
-          <NavigationMenuItem>
+    <div className="">
+      <div className="navbar bg-base-100 shadow-sm">
+        <div className="flex-1">
+          <a className="btn btn-ghost text-xl">daisyUI</a>
+        </div>
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
             {navList.map((item, idx) => (
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-                key={item.href}
-              >
+              <li key={item.href}>
                 <Link href={item.href}>{item.title}</Link>
-              </NavigationMenuLink>
+              </li>
             ))}
-          </NavigationMenuItem>
-          <NavigationMenuItem className="hidden md:block">
-            <NavigationMenuTrigger>Props</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[200px] gap-1">
-                {navListProps.map((item, idx) => (
-                  <li key={item.href}>
-                    <NavigationMenuLink asChild>
-                      <Link href={item.href}>{item.title}</Link>
-                    </NavigationMenuLink>
-                  </li>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem className="hidden md:block">
-            <NavigationMenuTrigger>API</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[200px] gap-1">
-                {navListAPI.map((item, idx) => (
-                  <li key={item.href}>
-                    <NavigationMenuLink asChild>
-                      <Link href={item.href} target="_blank">
+
+            <li>
+              <details ref={detailsRef}>
+                <summary>API</summary>
+                <ul className="bg-base-100 rounded-t-none p-2">
+                  {navListAPI.map((item, idx) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={handleClose}>
                         {item.title}
                       </Link>
-                    </NavigationMenuLink>
-                  </li>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <ModeToggle />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details ref={detailsRef}>
+                <summary>Props</summary>
+                <ul className="bg-base-100 rounded-t-none p-2">
+                  {navListProps.map((item, idx) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={handleClose}>
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

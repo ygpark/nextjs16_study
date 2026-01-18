@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Appbar from "@/components/appbar";
-import { ThemeProvider } from "@/components/theme-provider";
+import { path } from "@/components/path";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,15 +30,41 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Appbar />
-          {children}
-        </ThemeProvider>
+        <div className="drawer lg:drawer-open">
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+
+          <div className="drawer-content">{children}</div>
+
+          <div className="drawer-side is-drawer-close:overflow-visible">
+            <label
+              htmlFor="my-drawer-4"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
+              {/* Sidebar content here */}
+              <ul className="menu w-full grow">
+                {path.map((item, idx) => (
+                  <Link key={item.href} href={item.href} target={item.target}>
+                    <li>
+                      <button
+                        className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                        data-tip={item.title}
+                      >
+                        {/* Settings icon */}
+
+                        {item.icon}
+                        <span className="is-drawer-close:hidden">
+                          {item.title}
+                        </span>
+                      </button>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );

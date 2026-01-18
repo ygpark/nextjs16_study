@@ -1,15 +1,5 @@
 import * as React from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
-
 type Category = "animal" | "food" | "job" | "character" | "action";
 
 interface QuizItem {
@@ -53,25 +43,11 @@ const CarouselDemo = () => {
   const myQuizList: QuizItem[] = generateQuizList(quizData, 20);
 
   return (
-    <div className="flex flex-col items-center">
-      <Carousel className="w-full max-w-xs mx-auto">
-        <CarouselContent>
-          {myQuizList.map((item, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{item.word}</span>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
+    <ul>
+      {myQuizList.map((item, index) => (
+        <li key={index}>{item.word}</li>
+      ))}
+    </ul>
   );
 };
 
