@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Appbar from "@/components/appbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,31 +26,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navList = [
-    { name: "Home", href: "/" },
-    { name: "Props", href: "/props" },
-    { name: "Params", href: "/props/params" },
-    { name: "SearchParams", href: "/props/searchparams?key=value" },
-    { name: "Client Component", href: "/client-component" },
-    { name: "+ip", href: "/api/ip" },
-    { name: "+time", href: "/api/time" },
-    { name: "drizzle-orm", href: "/drizzle-orm" },
-  ];
-
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-gray-300 p-5 mb-4">
-          {navList.map((item, idx) => (
-            <span key={item.href}>
-              <Link href={item.href}>{item.name}</Link>
-              {idx < navList.length - 1 ? " | " : ""}
-            </span>
-          ))}
-        </div>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Appbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

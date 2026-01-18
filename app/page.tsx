@@ -1,29 +1,16 @@
-import Link from "next/link";
+import Content from "@/components/content";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
     <>
-      <h1>Home</h1>
-      <ul>
-        <li>
-          <a
-            href="https://nextjs.org/docs/app/getting-started"
-            target="_blank"
-            className="text-blue-700"
-          >
-            - Next.js 공식 레퍼런스
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://nextjs-ko.org/"
-            target="_blank"
-            className="text-blue-700"
-          >
-            - Next.js 공식 레퍼런스(한글)
-          </a>
-        </li>
-      </ul>
+      <Content>
+        <Hero
+          title="next.js v16 Study"
+          content="next.js를 공부하면서 만드는 프로젝트 입니다."
+        />
+        asdf
+      </Content>
     </>
   );
 }
