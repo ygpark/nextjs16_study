@@ -1763,6 +1763,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/reveal.js@npm:^5":
+  version: 5.2.2
+  resolution: "@types/reveal.js@npm:5.2.2"
+  checksum: 10c0/6e2c2a7aed07092e967f7d635cb589a76dd2548687cc296a3b2f87c0a932a7980a163dbac4acfe2ab20673164e3ed0d61bb62b54e189b4f311eeb427ed0ce519
+  languageName: node
+  linkType: hard
+
 "@types/statuses@npm:^2.0.6":
   version: 2.0.6
   resolution: "@types/statuses@npm:2.0.6"
@@ -5736,6 +5743,7 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    "@types/reveal.js": "npm:^5"
     better-sqlite3: "npm:^12.6.0"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
@@ -5750,6 +5758,7 @@ __metadata:
     next-themes: "npm:^0.4.6"
     react: "npm:19.2.3"
     react-dom: "npm:19.2.3"
+    reveal.js: "npm:^5.2.1"
     shadcn: "npm:^3.7.0"
     tailwind-merge: "npm:^3.4.0"
     tailwindcss: "npm:^4"
@@ -6639,6 +6648,13 @@ __metadata:
   version: 1.1.0
   resolution: "reusify@npm:1.1.0"
   checksum: 10c0/4eff0d4a5f9383566c7d7ec437b671cc51b25963bd61bf127c3f3d3f68e44a026d99b8d2f1ad344afff8d278a8fe70a8ea092650a716d22287e8bef7126bb2fa
+  languageName: node
+  linkType: hard
+
+"reveal.js@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "reveal.js@npm:5.2.1"
+  checksum: 10c0/aee2b307b0c5a13550346cc8913479a5aa27721ff23f8fa42660e5def7c96f509981eb643f6c53b086fd195a60a0bb4a47a4a0aae6edeba68753bec3deff187a
   languageName: node
   linkType: hard
 

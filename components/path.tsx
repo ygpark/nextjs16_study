@@ -48,6 +48,12 @@ export const path: {
     icon: <Gamepad2 size="17" className="my-1" />,
   },
   {
+    title: "reveal",
+    href: "/reveal",
+    target: "",
+    icon: <Gamepad2 size="17" className="my-1" />,
+  },
+  {
     title: "Props",
     href: "/props",
     target: "",

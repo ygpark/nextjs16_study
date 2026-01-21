@@ -1,6 +1,13 @@
 "use client";
-import * as React from "react";
-import { useState, useEffect } from "react";
+// app/presentation/page.tsx
+
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+// 클라이언트 사이드에서만 렌더링되도록 동적 임포트
+const Presentation = dynamic(() => import("@/components/presentation"), {
+  ssr: false,
+});
 
 type Category = "animal" | "food" | "job" | "character" | "action";
 
@@ -40,28 +47,20 @@ function generateQuizList(
   return allEntries.slice(0, count);
 }
 
-const CarouselDemo = () => {
-  // 1. 초기 상태를 빈 배열로 설정
-  const [myQuizList, setMyQuizList] = useState<QuizItem[]>([]);
-
-  const onClickHandler = () => {
-    const randomData = generateQuizList(quizData, 20);
-    setMyQuizList(randomData);
-  };
+export default function Page() {
+  const [myQuizList, setMyQuizList] = useState<QuizItem[]>(
+    generateQuizList(quizData, 20),
+  );
 
   return (
-    <>
-      <button onClick={onClickHandler}>새로고침</button>
-      <ul className="divide-y divide-gray-200 p-4">
-        {myQuizList.map((item, index) => (
-          <li key={index} className="py-2">
-            <span className="font-bold text-blue-600">[{item.category}]</span>{" "}
-            {item.word}
-          </li>
+    <main className="w-full h-[calc(100vh-64px)]">
+      <Presentation>
+        {myQuizList.map((item, idx) => (
+          <section key={item.word}>
+            <h1>{item.word}</h1>
+          </section>
         ))}
-      </ul>
-    </>
+      </Presentation>
+    </main>
   );
-};
-
-export default CarouselDemo;
+}

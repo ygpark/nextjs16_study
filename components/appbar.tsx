@@ -20,6 +20,7 @@ const Appbar = () => {
     { title: "Daisy-ui", href: "/daisy-ui" },
     { title: "shadcn", href: "/shadcn" },
     { title: "game", href: "/game" },
+    { title: "reveal", href: "/reveal" },
   ];
 
   const navListProps: { title: string; href: string }[] = [

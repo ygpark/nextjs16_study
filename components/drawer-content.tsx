@@ -9,7 +9,7 @@ const DrawerContent = ({
   title: string;
 }) => {
   return (
-    <div>
+    <>
       <div className="drawer-content">
         {/* Navbar */}
         <nav className="navbar w-full bg-base-300">
@@ -24,9 +24,9 @@ const DrawerContent = ({
           <div className="px-4">{title}</div>
         </nav>
         {/* Page content here */}
-        <div className="p-4">{children}</div>
+        <div className="">{children}</div>
       </div>
-    </div>
+    </>
   );
 };
 
