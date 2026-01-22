@@ -38,7 +38,7 @@ export default function Presentation({
   }, []);
 
   return (
-    <div className="reveal w-full h-screen" ref={deckRef}>
+    <div className="reveal w-full h-full" ref={deckRef}>
       <div className="slides">
         {/* 섹션 하나가 슬라이드 한 장입니다. */}
         {children}
