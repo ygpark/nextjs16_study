@@ -4,9 +4,11 @@ import React from "react";
 const DrawerContent = ({
   children,
   title = "",
+  buttons = undefined,
 }: {
   children: React.ReactNode;
   title: string;
+  buttons?: React.ReactNode;
 }) => {
   return (
     <>
@@ -22,6 +24,7 @@ const DrawerContent = ({
             <PanelRightClose size="17" className="my-1" />
           </label>
           <div className="px-4">{title}</div>
+          <div>{buttons ? buttons : ""}</div>
         </nav>
         {/* Page content here */}
         <div className="">{children}</div>
