@@ -1,12 +1,12 @@
 "use client";
 
-import DrawerContent from "@/components/drawer-content";
 import { PanelRightClose } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getRecentIPs, type RecentIPEntry } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import RecentIP from "@/components/recentip";
 
-export default function Home() {
+export default function Page() {
   const [recentIPs, setRecentIPs] = useState<RecentIPEntry[]>([]);
   const router = useRouter();
 
@@ -34,25 +34,7 @@ export default function Home() {
           </label>
           <div className="px-4">Home</div>
         </nav>
-        {/* Page content here */}
-        <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">최근 IP 목록</h2>
-          {recentIPs.length > 0 ? (
-            <ul className="list-disc list-inside">
-              {recentIPs.map((entry, index) => (
-                <li
-                  key={index}
-                  className="cursor-pointer hover:underline"
-                  onClick={() => handleIPClick(entry.ip)}
-                >
-                  {entry.ip} ({new Date(entry.timestamp).toLocaleString()})
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>최근 방문한 IP가 없습니다.</p>
-          )}
-        </div>
+        <RecentIP />
       </div>
     </>
   );
