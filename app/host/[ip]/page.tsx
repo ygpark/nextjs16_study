@@ -65,7 +65,7 @@ function Page() {
             onKeyDown={handleKeyDown}
           />
         </label>
-        <h1>{ip}</h1>
+        <h1 className="text-2xl font-bold">{ip}</h1>
         <ul>
           <li className="flex flex-row items-center gap-2 py-1">
             <Image
