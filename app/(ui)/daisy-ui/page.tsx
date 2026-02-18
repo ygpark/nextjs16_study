@@ -9,6 +9,9 @@ const Page = () => {
 +@plugin "daisyui";
 `}</code>
       </pre>
+      <a href="https://daisyui.com/" target="_blank" rel="noopener noreferrer">
+        daisyui 공식 문서
+      </a>
     </div>
   );
 };
