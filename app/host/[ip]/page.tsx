@@ -13,7 +13,7 @@ async function Page({ params }: parmasType) {
     <div>
       <h1>{ip}</h1>
       <ul>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.virustotal.svg"
             alt="virustotal"
@@ -25,10 +25,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Virustotal
+            virustotal
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.shodan.io.webp"
             alt="shodan.io"
@@ -40,10 +40,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Shodan
+            shodan
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.criminalip.io.ico"
             alt="criminalip.io"
@@ -55,10 +55,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Criminal IP
+            criminalip
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.secai.ai.ico"
             alt="secai.ai"
@@ -70,10 +70,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            SecAI
+            secai
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.censys.io.ico"
             alt="censys.io"
@@ -85,10 +85,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Censys.io
+            censys
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.spur.us.ico"
             alt="spur.us"
@@ -103,7 +103,7 @@ async function Page({ params }: parmasType) {
             spur.us
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.whois.com.ico"
             alt="whois.com"
@@ -115,10 +115,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Whois.com
+            whois.com
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.iplocate.io.webp"
             alt="iplocate.io"
@@ -130,10 +130,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            iplocate.io
+            iplocate
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.ipapi.is.png"
             alt="ipapi.is"
@@ -145,10 +145,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            ipapi.is
+            ipapi
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.bgp.he.net.ico"
             alt="bgp.he.net"
@@ -160,10 +160,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            bgp.he.net
+            he.net
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.urlscan.io.ico"
             alt="urlscan.io"
@@ -175,10 +175,10 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            urlscan.io
+            urlscan
           </a>
         </li>
-        <li className="flex flex-row items-center gap-1">
+        <li className="flex flex-row items-center gap-2 py-1">
           <Image
             src="/img/favicon.check-host.net.ico"
             alt="check-host.net"
@@ -190,7 +190,7 @@ async function Page({ params }: parmasType) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            check-host.net
+            check-host
           </a>
         </li>
       </ul>
