@@ -89,4 +89,10 @@ export const path: {
     target: "_blank",
     icon: <Clock9 size="17" className="my-1" />,
   },
+  {
+    title: "host/ip",
+    href: "/host/38.60.220.30",
+    target: "",
+    icon: <Clock9 size="17" className="my-1" />,
+  },
 ];
